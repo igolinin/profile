@@ -40,6 +40,6 @@ app1.use(error);
 app2.use(error);
 
 app1.listen(8080, () => console.log("server started on port 8080"));
-app1.listen(9090, () => console.log("server started on port 9090"));
+app2.listen(9090, () => console.log("server started on port 9090"));
 
 module.exports = app1;
