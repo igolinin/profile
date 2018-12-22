@@ -10,7 +10,7 @@ router.get("/user", auth, async (req, res) => {
 });
 router.get("/", async (req, res) => {
   const users = User.find({});
-  res.send(users);
+  res.send("ok");
 });
 router.put("/user", auth, async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
