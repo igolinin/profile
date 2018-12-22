@@ -2,8 +2,8 @@ const express = require("express");
 const User = require("../models/user");
 const router = express.Router();
 
-router.get("/user/:email", async (req, res) => {
-  const email = req.params.email;
+router.get("/user", auth, async (req, res) => {
+  const email = req.user.email;
   const result = User.findOne({ email: email });
   res.send(result);
 });
