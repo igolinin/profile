@@ -9,7 +9,7 @@ router.get("/user", auth, async (req, res) => {
   res.send(result);
 });
 router.get("/", async (req, res) => {
-  const users = User.find();
+  const users = User.find({});
   res.send(users);
 });
 router.put("/user", auth, async (req, res) => {
