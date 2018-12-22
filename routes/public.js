@@ -5,11 +5,11 @@ const auth = require("../middleware/auth");
 
 router.get("/user", auth, async (req, res) => {
   const email = req.user.email;
-  const result = User.findOne({ email: email });
+  const result = await User.findOne({ email: email });
   res.send(result);
 });
 router.get("/", async (req, res) => {
-  const users = User.find({});
+  const users = await User.find({});
   res.send("ok");
 });
 router.put("/user", auth, async (req, res) => {
