@@ -1,6 +1,11 @@
 FROM node:9-slim
-ENV PORT 8080
+RUN apt-get update -y && apt-get dist-upgrade -y && \
+apt-get install -y --no-install-recommends paxctl && \
+paxctl -mC `which node`
+ENV NODE_ENV=production
 EXPOSE 8080
+EXPOSE 9090
 WORKDIR /usr/src/app
 COPY . .
+RUN npm install
 CMD ["npm", "start"]
