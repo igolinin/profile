@@ -18,7 +18,7 @@ router.post("/newuser", async (req, res) => {
   });
   const result = await newuser.save();
 
-  res.send("ok post");
+  res.status(200).send("ok post");
 });
 
 router.delete("/", async (req, res) => {
