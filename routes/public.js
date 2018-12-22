@@ -16,8 +16,7 @@ router.put("/user", auth, async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("User does not exist");
 
-  user = req.body;
-  await User.findByIdAndUpdate({ email: user.email }, { $set: user });
+  await User.findByIdAndUpdate({ email: user.email }, { $set: req.body });
 
   res.send("ok put");
 });
