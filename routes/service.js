@@ -26,6 +26,7 @@ router.delete("/all", async (req, res) => {
 });
 router.delete("/", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
+  console.log(user, req.body.email);
   if (!user) return res.status(400).send("User does not exist");
   await User.deleteOne({ email: req.body.email });
 
