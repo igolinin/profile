@@ -20,7 +20,10 @@ router.post("/newuser", async (req, res) => {
 
   res.status(200).send("ok post");
 });
-
+router.delete("/all", async (req, res) => {
+  await User.deleteMany({});
+  res.send("OK");
+});
 router.delete("/", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("User does not exist");
