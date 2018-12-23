@@ -26,7 +26,7 @@ router.delete("/", async (req, res) => {
   if (!user) return res.status(400).send("User does not exist");
   await User.deleteOne({ email: req.body.email });
 
-  res.send(`User ${req.body.email} succesfully removed`);
+  res.status(204).send(`User ${req.body.email} succesfully removed`);
 });
 
 module.exports = router;
