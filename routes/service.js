@@ -13,7 +13,7 @@ router.post("/newuser", async (req, res) => {
     street: req.body.street,
     city: req.body.city,
     zip: req.body.zip,
-    country: req.bodyzip,
+    country: req.body.country,
     birthday: req.body.birthday
   });
   const result = await newuser.save();
