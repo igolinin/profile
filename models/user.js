@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   zip: {
     type: String
   },
-  contry: {
+  country: {
     type: String
   },
   birthday: {

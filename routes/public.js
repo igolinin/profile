@@ -3,8 +3,8 @@ const User = require("../models/user");
 const router = express.Router();
 const auth = require("../middleware/auth");
 
-router.get("/user", auth, async (req, res) => {
-  const email = req.user.email;
+router.get("/user/:email", auth, async (req, res) => {
+  const email = req.params.email;
   const result = await User.findOne({ email: email });
   res.send(result);
 });

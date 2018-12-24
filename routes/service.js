@@ -20,6 +20,11 @@ router.post("/newuser", async (req, res) => {
 
   res.status(200).send("ok post");
 });
+router.get("/user/:email", async (req, res) => {
+  const email = req.params.email;
+  const result = await User.findOne({ email: email });
+  res.send(result);
+});
 router.delete("/all", async (req, res) => {
   await User.deleteMany({});
   res.send("OK");
