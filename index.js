@@ -9,7 +9,7 @@ const config = require("config");
 const database = config.get("db.host");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const cors = require('cors';)
+const cors = require("cors");
 const app1 = express();
 const app2 = express();
 
