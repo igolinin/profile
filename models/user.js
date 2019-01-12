@@ -25,6 +25,9 @@ const userSchema = new mongoose.Schema({
   },
   birthday: {
     type: Date
+  },
+  role: {
+    type: String
   }
 });
 function validateUser(user) {
