@@ -9,6 +9,7 @@ const config = require("config");
 const database = config.get("db.host");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
+const cors = require('cors';)
 const app1 = express();
 const app2 = express();
 
@@ -21,6 +22,7 @@ mongoose
   .catch(err => console.log("cannot connect to db", err));
 const db = mongoose.connection;
 
+app1.use(cors());
 app1.use(bodyParser.urlencoded({ extended: false }));
 app1.use(bodyParser.json());
 app1.use(morgan("tiny"));
