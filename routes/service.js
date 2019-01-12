@@ -14,7 +14,8 @@ router.post("/newuser", async (req, res) => {
     city: req.body.city,
     zip: req.body.zip,
     country: req.body.country,
-    birthday: req.body.birthday
+    birthday: req.body.birthday,
+    role: req.body.role
   });
   const result = await newuser.save();
 
